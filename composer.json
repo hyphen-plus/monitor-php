@@ -1,0 +1,50 @@
+{
+    "name": "allclearly/monitor",
+    "description": "Send security events (logins, requests, errors) to AllClearly Monitoring",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://allclearly.com/docs/monitoring-ingest.md",
+    "keywords": [
+        "security",
+        "monitoring",
+        "siem",
+        "laravel",
+        "allclearly"
+    ],
+    "support": {
+        "source": "https://github.com/hyphen-plus/monitor-php",
+        "issues": "https://github.com/hyphen-plus/monitor-php/issues"
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*"
+    },
+    "suggest": {
+        "ext-curl": "Faster HTTP; falls back to PHP streams without it"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0",
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AllClearly\\Monitor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AllClearly\\Monitor\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AllClearly\\Monitor\\Laravel\\MonitorServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
